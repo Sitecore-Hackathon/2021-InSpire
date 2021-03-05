@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{9057891A-15E8-4183-8890-215E6B24BDD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{E25A754F-3099-47B3-8708-76C3E9F1AF56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{49BE1788-4C8A-425B-84E4-5FC3A65EE79E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{B7ED7056-B3AD-4ED0-826F-3DC554755BB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unicorn", "Unicorn", "{46DD6A2E-F863-44E7-B152-397C1FB0E43A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature1", "Feature1", "{27157EB6-6DA9-4511-B838-7ED1BA4E5D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Project.Website", "src\Project\Website\code\SCHackathon.Project.Website.csproj", "{2C2E7CA3-EA10-470E-9F5F-7E07842BA695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Foundation.Unicorn", "src\Foundation\Unicorn\code\SCHackathon.Foundation.Unicorn.csproj", "{A1D76292-C17B-440E-82A7-BB65280A58DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Feature.Feature1", "src\Feature\Feature1\code\SCHackathon.Feature.Feature1.csproj", "{85623167-D4EB-4A8D-AA34-D4755BC4560E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{DB32281C-4A1D-40BA-AE80-206A76F20030}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C2E7CA3-EA10-470E-9F5F-7E07842BA695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2E7CA3-EA10-470E-9F5F-7E07842BA695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2E7CA3-EA10-470E-9F5F-7E07842BA695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2E7CA3-EA10-470E-9F5F-7E07842BA695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D76292-C17B-440E-82A7-BB65280A58DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D76292-C17B-440E-82A7-BB65280A58DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D76292-C17B-440E-82A7-BB65280A58DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D76292-C17B-440E-82A7-BB65280A58DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7ED7056-B3AD-4ED0-826F-3DC554755BB1} = {49BE1788-4C8A-425B-84E4-5FC3A65EE79E}
+		{46DD6A2E-F863-44E7-B152-397C1FB0E43A} = {9057891A-15E8-4183-8890-215E6B24BDD6}
+		{27157EB6-6DA9-4511-B838-7ED1BA4E5D88} = {E25A754F-3099-47B3-8708-76C3E9F1AF56}
+		{2C2E7CA3-EA10-470E-9F5F-7E07842BA695} = {B7ED7056-B3AD-4ED0-826F-3DC554755BB1}
+		{A1D76292-C17B-440E-82A7-BB65280A58DD} = {46DD6A2E-F863-44E7-B152-397C1FB0E43A}
+		{85623167-D4EB-4A8D-AA34-D4755BC4560E} = {27157EB6-6DA9-4511-B838-7ED1BA4E5D88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC9A1756-1B56-44FF-94BD-1EEFDBC97C18}
+	EndGlobalSection
+EndGlobal
