@@ -1,18 +1,124 @@
-﻿
-<head>
+﻿<head>
     <title>Cloud Connect</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="~/scripts/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            background: rgb(160, 190, 207);
+            margin: 0px;
+            padding: 0px;
+            font-family: "Roboto", Helvetica, Arial, sans-serif;
+            font-weight: 100;
+            font-size: 12px;
+            line-height: 30px;
+            color: #777;
+        }
+
+        .heading {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px dotted #ccc;
+            margin: 0px 0 30px;
+        }
+
+
+        #contact {
+            width: 30%;
+            margin: auto;
+            background: #F9F9F9;
+            padding: 25px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            height: 100vh;
+        }
+
+
+            #contact input[type="text"],
+            #contact input[type="email"],
+            #contact input[type="tel"],
+            #contact input[type="url"],
+            #contact textarea,
+            #contact button[type="submit"] {
+                font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+            }
+
+        #cloudproviderId {
+            width: 100%;
+            border: 1px solid #ccc;
+            background: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="tel"],
+        #contact input[type="url"],
+        #contact textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            background: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+        }
+
+            #contact input[type="text"]:hover,
+            #contact input[type="email"]:hover,
+            #contact input[type="tel"]:hover,
+            #contact input[type="url"]:hover,
+            #contact textarea:hover {
+                -webkit-transition: border-color 0.3s ease-in-out;
+                -moz-transition: border-color 0.3s ease-in-out;
+                transition: border-color 0.3s ease-in-out;
+                border: 1px solid #aaa;
+            }
+
+        #contact textarea {
+            height: 100px;
+            max-width: 100%;
+            resize: none;
+        }
+
+        #contact input[type="button"] {
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            background: #a0becf;
+            color: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+            font-size: 15px;
+            margin: 30px 0;
+        }
+
+            #contact input[type="button"]:hover {
+                background: #527284;
+                -webkit-transition: background 0.3s ease-in-out;
+                -moz-transition: background 0.3s ease-in-out;
+                transition: background-color 0.3s ease-in-out;
+            }
+
+            #contact input[type="button"]:active {
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+            }
+
+        #successId, #errorId {
+            text-align: center;
+            color: #000;
+            margin: 0px;
+            padding: 5px;
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="container">
-        <h2>Choose your Cloud Provider</h2>
-        <form>
+        <form id="contact">
+            <h2 class="heading">Choose your Cloud Provider</h2>
             <div class="form-group">
-
-
                 <select onchange="onproviderChange()" name="cloudprovider" id="cloudproviderId">
                     <option value="Azure">Azure</option>
                     <option value="AWS">AWS</option>
@@ -21,27 +127,26 @@
                     <option value="AliBabaCloud">AliBabaCloud</option>
                 </select>
             </div>
-            <br />
-            <br />
             <div id="azureForm">
                 <div class="form-group">
-                    <label for="accountName">Azure Storage Account Name:</label>
-                    <input type="text" class="form-control" placeholder="Enter Account Name" id="accountName">
+                    <label for="azureConnectionString">Azure Storage Connection string:</label>
+                    <input type="text" class="form-control" placeholder="Enter Azure Connection String" id="azureConnectionString">
                 </div>
+               
                 <div class="form-group">
-                    <label for="accountkey">Azure Storage Account key:</label>
-                    <input type="text" class="form-control" placeholder="Enter Account Key" id="accountkey">
+                    <label for="queueName">Azure Queue Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Queue Name" id="queueName">
                 </div>
-                <input type="button" name="Connect To Azure" value="Connect To Azure" onclick="connectToAzure()" class="btn btn-primary">
+                <input type="button" name="Connect To Azure" value="Connect To Azure" onclick="connectToAzure()"
+                       class="btn btn-primary">
             </div>
-        </form>
 
-        <h1 id="successId">Successfully connected to Azure!!!!</h1>
-        <h1 id="errorId">Invalid credentials..</h1>
+            <h1 id="successId">Successfully connected to Azure!!!!</h1>
+            <h1 id="errorId">Invalid credentials..</h1>
+        </form>
     </div>
 
 </body>
-</html>
 <script>
     $(document).ready(function () {
         $("#successId").hide();
@@ -58,10 +163,10 @@
 
 
         var azureProperties = {
-            AzureAccountName: $("#accountName").val(),
-            SecretKey: $("#accountkey").val(),
+            AzureAccountName: $("#azureConnectionString").val(),
+            SecretKey: "",
             AzureUrl: "",
-            AzureQueueName: ""
+            AzureQueueName: $("#queueName").val()
         };
 
         $.ajax({
@@ -90,4 +195,3 @@
     }
 
 </script>
-

@@ -12,6 +12,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Sitecore.Web;
+using Sitecore.Data.Items;
+using Azure.Storage.Queues; 
+using Azure.Storage.Queues.Models;
+using Sitecore.Data;
+using Sitecore.Publishing;
 
 namespace SCHackathon.Feature.CloudConnector.Controllers
 {
@@ -25,15 +30,12 @@ namespace SCHackathon.Feature.CloudConnector.Controllers
             {
                 try
                 {
-                    var azQueueAcName = azureProperties.AzureAccountName;
-                    var azQueueAcKey = azureProperties.SecretKey;
-                    var saCred = new StorageCredentials(azQueueAcName, azQueueAcKey);
-                    var saConfig = new CloudStorageAccount(saCred, true);
-                    var azClient = saConfig.CreateCloudQueueClient();
-                    if (azClient.BaseUri != null)
+                    var queueClient = new QueueClient(azureProperties.AzureAccountName, azureProperties.AzureQueueName);
+                    queueClient.CreateIfNotExists();
+                    if (queueClient.Exists())
                     {
-                        this.Session.Add("AzClientData", azClient);
                         result = true;
+                        SetSitecoreCloudDictionary(queueClient);
                         return Json(result, JsonRequestBehavior.AllowGet);
                     }
                 }
@@ -47,6 +49,61 @@ namespace SCHackathon.Feature.CloudConnector.Controllers
             {
                 Log.Error(ex.StackTrace, ex, typeof(CloudConnectorController));
                 return Json(result, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        private bool SetSitecoreCloudDictionary(QueueClient cloudQueueClient)
+        {
+            bool isSuccess = false;
+            Item newItem = null;
+            var masterDB = Sitecore.Configuration.Factory.GetDatabase("master");
+
+            var parentItem = masterDB.GetItem("/sitecore/system/Dictionary");
+
+            var template = masterDB.GetTemplate(new Sitecore.Data.ID("{6D1CD897-1936-4A3A-A511-289A94C2A7B1}"));
+
+            using (new Sitecore.SecurityModel.SecurityDisabler())
+            {
+                try
+                {
+                    string output = JsonConvert.SerializeObject(cloudQueueClient);
+                    var getexistingItem = masterDB.GetItem("/sitecore/system/Dictionary/clouddictionary");
+                    newItem = getexistingItem == null ? parentItem.Add("clouddictionary", template) : getexistingItem;
+                    if (newItem != null)
+                    {
+                        newItem.Editing.BeginEdit();
+                        newItem["Key"] = newItem.Name;
+                        newItem["Phrase"] = output;
+                        newItem.Editing.EndEdit();
+                        isSuccess = true;
+                        PublishItem(Database.GetDatabase("master"), Database.GetDatabase("web"), parentItem);
+                        return isSuccess;
+                    }
+                    return isSuccess;
+                }
+                catch (Exception ex)
+                {
+                    isSuccess = false;
+                    newItem.Editing.CancelEdit();
+                    return isSuccess;
+                }
+            }
+        }
+
+
+        public void PublishItem(Database dbMaster, Database dbWeb, Item iParent)
+        {
+            try
+            {
+                PublishOptions po = new PublishOptions(dbMaster, dbWeb, PublishMode.SingleItem, Sitecore.Context.Language, DateTime.Now);
+                po.RootItem = iParent;
+                po.Deep = true; // Publishing subitems
+
+                (new Publisher(po)).Publish();
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("Exception publishing items from custom pipeline! : " + ex, this);
             }
         }
 
