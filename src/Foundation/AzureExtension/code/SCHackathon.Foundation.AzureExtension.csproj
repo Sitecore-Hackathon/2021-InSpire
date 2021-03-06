@@ -284,7 +284,6 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="Controllers\AzureExtensionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -298,6 +297,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Start\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
