@@ -31,8 +31,8 @@ This way we are not overloading Sitecore with the tasks that can be performed ou
 > If credentials are valid, then Sitecore will be connected to Azure storage account. 
 > Now you can use with Sitecore forms or Sitecore marketing automation application to save contacts data in Azure.
 > First let's see how to use this module in Sitecore Forms as below screenshots
-> ![SendToAzure Custom Action button on Form](https://photos.app.goo.gl/WMSaWH64jYizfP7P7)
-> ![Contact us page View](https://photos.app.goo.gl/N8NCLudGUp6BrKP7A)
+> ![SendToAzure Custom Action button on Form](docs/images/SendToAzure-CustomButton.PNG?raw=true "Azure Custom Action")
+> ![Contact us page View](docs/images/contact-us-page.PNG?raw=true "Contact Us Page")
 
 
 
