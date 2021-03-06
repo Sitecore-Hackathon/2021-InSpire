@@ -285,7 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
-    <Compile Include="Controllers\FormDetailsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\FormDataModel.cs" />
     <Compile Include="CustomActions\SaveToAzure.cs" />
@@ -298,6 +297,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

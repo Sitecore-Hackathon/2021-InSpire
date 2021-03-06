@@ -30,7 +30,7 @@ namespace SCHackathon.Feature.Form.CustomActions
                 var formFieldName = string.Empty;
                 var dict = new Dictionary<string, string>();
                 var fields = formSubmitContext.Fields.ToList();
-                foreach(var item in fields)
+                foreach (var item in fields)
                 {
                     formFieldName = item.Name;
                     value = GetFieldValue(formSubmitContext, formFieldName);
@@ -41,7 +41,6 @@ namespace SCHackathon.Feature.Form.CustomActions
                     {"FormData", dict}
                 };
                 var formDetails = JsonConvert.SerializeObject(dictionary);
-                //this.SendMessage(formDetails);
                 return true;
             }
             catch (Exception e)
