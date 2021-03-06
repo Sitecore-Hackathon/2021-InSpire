@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Project.Website
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Foundation.Unicorn", "src\Foundation\Unicorn\code\SCHackathon.Foundation.Unicorn.csproj", "{A1D76292-C17B-440E-82A7-BB65280A58DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Feature.Feature1", "src\Feature\Feature1\code\SCHackathon.Feature.Feature1.csproj", "{85623167-D4EB-4A8D-AA34-D4755BC4560E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Feature.Form", "src\Feature\Feature1\code\SCHackathon.Feature.Form.csproj", "{85623167-D4EB-4A8D-AA34-D4755BC4560E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{DB32281C-4A1D-40BA-AE80-206A76F20030}"
 	ProjectSection(SolutionItems) = preProject
@@ -57,6 +57,7 @@ Global
 		{85623167-D4EB-4A8D-AA34-D4755BC4560E} = {27157EB6-6DA9-4511-B838-7ED1BA4E5D88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
 		SolutionGuid = {EC9A1756-1B56-44FF-94BD-1EEFDBC97C18}
 	EndGlobalSection
 EndGlobal
