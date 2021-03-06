@@ -24,9 +24,31 @@ This way we are not overloading Sitecore with the tasks that can be performed ou
  -   How does this module solve it
 
 
+## Video link
 
- - How to use this:
+[CloudConnector Video Url](https://www.youtube.com/watch?v=Il6v5sHQ)
 
+
+## Pre-requisites and Dependencies
+
+- Dependencies
+
+Sitecore 10.1.0 rev. 005207 (WDP XP0 packages).zip
+
+Content editor & marketers must need azure Credentials
+
+
+## Installation instructions
+
+- Install Sitecore 10.1.0 rev. 005207 [Sitecore Experience Platform 10.1](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/101/Sitecore_Experience_Platform_101.aspx)
+- Install [cloud connector module](https://github.com/Sitecore-Hackathon/2021-InSpire/raw/develop-pk/docs/cloud%20connector.zip)
+- Smart Publish
+
+
+### Configuration
+
+
+## Usage instructions
 Go to Sitecore launchpad -> click on Cloud Connector app.
 
 On the cloud connector page, first choose the cloud provider. **This implementation is working for Azure cloud provider.**
@@ -44,39 +66,9 @@ First let's see how to use this module in Sitecore Forms as below screenshots
 
 ![Contact us page View](docs/images/contact-us-page.PNG?raw=true "Contact Us Page")
 
-## Video link
-
-[CloudConnector Video Url](#https://www.youtube.com/watch?v=Il6v5sHQ)
-
-
-## Pre-requisites and Dependencies
-
-- Dependencies
-Sitecore 10.1.0 rev. 005207 (WDP XP0 packages).zip
-Microsoft Azure
-Content editor & marketers must need azure Credentials
-
-
-## Installation instructions
-
-Install Sitecore 10.1.0 rev. 005207 [Sitecore Experience Platform 10.1](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/101/Sitecore_Experience_Platform_101.aspx)
-Install [cloud connector module](https://github.com/Sitecore-Hackathon/2021-InSpire/raw/develop-pk/docs/cloud%20connector.zip)
-Smart Publish
-
-
-### Configuration
-
-
-## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
-
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+![SMS Notification to User](docs/images/sms-notifcation.jpg?raw=true "Contact Us Page")
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
-
-You can embed images of different formats too:
-
-![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
 
 
 ## Comments
