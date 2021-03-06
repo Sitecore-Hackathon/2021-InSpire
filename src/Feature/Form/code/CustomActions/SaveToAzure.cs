@@ -1,13 +1,18 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.ExperienceForms.Models;
 using Sitecore.ExperienceForms.Mvc.Models.Fields;
 using Sitecore.ExperienceForms.Processing;
 using Sitecore.ExperienceForms.Processing.Actions;
+using Sitecore.Globalization;
+using Sitecore.Mvc.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Helpers;
 
 namespace SCHackathon.Feature.Form.CustomActions
 {
@@ -36,6 +41,10 @@ namespace SCHackathon.Feature.Form.CustomActions
                     dict.Add(formFieldName, value);
                 }
                 var formDetails = JsonConvert.SerializeObject(dict);
+                var queueClient = Translate.Text("clouddictionary");
+                var a=queueClient.Split(new string[] { "||" }, StringSplitOptions.None);
+                var cloudQueueClient = new Azure.Storage.Queues.QueueClient(a[0],a[1]);
+                cloudQueueClient.SendMessage(formDetails);
                 return true;
             }
             catch (Exception e)
