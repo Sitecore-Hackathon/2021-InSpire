@@ -44,6 +44,7 @@ namespace SCHackathon.Feature.Form.CustomActions
                 var queueClient = Translate.Text("clouddictionary");
                 var a=queueClient.Split(new string[] { "||" }, StringSplitOptions.None);
                 var cloudQueueClient = new Azure.Storage.Queues.QueueClient(a[0],a[1]);
+                cloudQueueClient.CreateIfNotExists();
                 cloudQueueClient.SendMessage(formDetails);
                 return true;
             }
