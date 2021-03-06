@@ -19,12 +19,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Project.Website
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Foundation.Unicorn", "src\Foundation\Unicorn\code\SCHackathon.Foundation.Unicorn.csproj", "{A1D76292-C17B-440E-82A7-BB65280A58DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Feature.Form", "src\Feature\Feature1\code\SCHackathon.Feature.Form.csproj", "{85623167-D4EB-4A8D-AA34-D4755BC4560E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Feature.Form", "src\Feature\Form\code\SCHackathon.Feature.Form.csproj", "{85623167-D4EB-4A8D-AA34-D4755BC4560E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{DB32281C-4A1D-40BA-AE80-206A76F20030}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Foundation.AzureExtension", "src\Foundation\AzureExtension\code\SCHackathon.Foundation.AzureExtension.csproj", "{5A9CE275-246C-4264-A4D0-70557415F8A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureExtension", "AzureExtension", "{5AB952AD-B494-4480-99B7-6BA74B86D57E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,10 @@ Global
 		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85623167-D4EB-4A8D-AA34-D4755BC4560E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A9CE275-246C-4264-A4D0-70557415F8A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A9CE275-246C-4264-A4D0-70557415F8A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A9CE275-246C-4264-A4D0-70557415F8A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A9CE275-246C-4264-A4D0-70557415F8A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,8 @@ Global
 		{2C2E7CA3-EA10-470E-9F5F-7E07842BA695} = {B7ED7056-B3AD-4ED0-826F-3DC554755BB1}
 		{A1D76292-C17B-440E-82A7-BB65280A58DD} = {46DD6A2E-F863-44E7-B152-397C1FB0E43A}
 		{85623167-D4EB-4A8D-AA34-D4755BC4560E} = {27157EB6-6DA9-4511-B838-7ED1BA4E5D88}
+		{5A9CE275-246C-4264-A4D0-70557415F8A0} = {5AB952AD-B494-4480-99B7-6BA74B86D57E}
+		{5AB952AD-B494-4480-99B7-6BA74B86D57E} = {9057891A-15E8-4183-8890-215E6B24BDD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
