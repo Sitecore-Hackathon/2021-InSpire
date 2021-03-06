@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{B7ED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unicorn", "Unicorn", "{46DD6A2E-F863-44E7-B152-397C1FB0E43A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature1", "Feature1", "{27157EB6-6DA9-4511-B838-7ED1BA4E5D88}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Form", "Form", "{27157EB6-6DA9-4511-B838-7ED1BA4E5D88}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHackathon.Project.Website", "src\Project\Website\code\SCHackathon.Project.Website.csproj", "{2C2E7CA3-EA10-470E-9F5F-7E07842BA695}"
 EndProject

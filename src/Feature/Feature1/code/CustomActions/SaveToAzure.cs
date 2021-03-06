@@ -47,7 +47,6 @@ namespace SCHackathon.Feature.Form.CustomActions
             catch (Exception e)
             {
                 Log.Error($"Error sending data to azure", e, this);
-                //formSubmitContext.Abort(); optional
                 return false;
             }
         }
