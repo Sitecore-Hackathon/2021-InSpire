@@ -25,7 +25,6 @@ namespace SCHackathon.Feature.Form.CustomActions
             
             try
             {
-                var key = string.Empty;
                 var value = string.Empty;
                 var formFieldName = string.Empty;
                 var dict = new Dictionary<string, string>();
@@ -36,11 +35,7 @@ namespace SCHackathon.Feature.Form.CustomActions
                     value = GetFieldValue(formSubmitContext, formFieldName);
                     dict.Add(formFieldName, value);
                 }
-                var dictionary = new Dictionary<string, object>
-                {
-                    {"FormData", dict}
-                };
-                var formDetails = JsonConvert.SerializeObject(dictionary);
+                var formDetails = JsonConvert.SerializeObject(dict);
                 return true;
             }
             catch (Exception e)
@@ -111,7 +106,7 @@ namespace SCHackathon.Feature.Form.CustomActions
             }
             catch (Exception ex)
             {
-                Log.Error($"Error Get FieldValue for {fieldName}", ex, this);
+                Log.Error($"Error Getting FieldValue for {fieldName}", ex, this);
             }
             return fieldValue;
         }
