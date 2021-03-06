@@ -13,23 +13,27 @@ The best enhancement to the Sitecore Admin (XP) for Content Editors & Marketers
  - Module Name: Cloud Connector
 
  - Module Purpose
+ 
 This module will connect Sitecore centrally with any of the cloud providers like Azure, AWS, Google and provide flexibility to marketers and content editors to save Sitecore data to cloud from any of the Sitecore marketing apps like Sitecore Experience Forms, Sitecore marketing Automation or personalization data etc. In our current implementation, we are saving contact's data to Azure storage from Sitecore forms and marketing automation and then using azure function, we are sending SMS notification to those contacts. 
 
  - What problem was solved
+ 
 Sitecore provided basic out of the box functionalities/actions like send email to contacts. But let's say, marketers wants to engage customers with SMS, WhatsApp or through any other way.
 And here cloud connector come into the pictures with above problem's solutions.
 So instead of creating custom functionality for each of these actions in Sitecore, we are utilizing cloud computing to perform these actions.
 This way we are not overloading Sitecore with the tasks that can be performed outside of Sitecore and performance of Sitecore will not be hampered.
 
  -   How does this module solve it
-First, we created an app on launchpad which will create connection with any of cloud provider 
-and then connect any of its service. In our implementation, we are connecting to Azure cloud provier and its storage
-service. After succefully connection with azure storage account, we are saving it's client to connect any other sitecore
-marketing apps like experince forms or makreing automation. Then we created custom action in forms and Markating automation
-which will get current contact information like first name, last name, phone number and then save these to azure storage 
+ 
+First, we created an app on launchpad which will create connection with any of cloud provider  
+and then connect any of its service. In our implementation, we are connecting to Azure cloud provider and its storage  
+service. After successfully connection with azure storage account, we are saving it's client to connect any other sitecore  
+marketing apps like experience forms or marketing automation. Then we created custom action in forms and Marketing automation  
+which will get current contact information like first name, last name, phone number and then save these to azure storage  
 queue. Now we have created send message azure function using twillio service.
 
 ## Video link
+
 [CloudConnector Video Url](https://www.youtube.com/watch?v=Il6v5sHQ)
 
 
@@ -72,8 +76,6 @@ First let's see how to use this module in Sitecore Forms as below screenshots
 ![Contact us page View](docs/images/contact-us-page.PNG?raw=true "Contact Us Page")
 
 ![SMS Notification to User](docs/images/sms-notifcation.jpg?raw=true "SMS Notification")
-
-
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
