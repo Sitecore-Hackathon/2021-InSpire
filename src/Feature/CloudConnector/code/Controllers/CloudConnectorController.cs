@@ -13,7 +13,7 @@ using System.Web;
 using System.Web.Mvc;
 using Sitecore.Web;
 using Sitecore.Data.Items;
-using Azure.Storage.Queues; 
+using Azure.Storage.Queues;
 using Azure.Storage.Queues.Models;
 using Sitecore.Data;
 using Sitecore.Publishing;
@@ -35,7 +35,7 @@ namespace SCHackathon.Feature.CloudConnector.Controllers
                     if (queueClient.Exists())
                     {
                         result = true;
-                        SetSitecoreCloudDictionary(queueClient);
+                        SetSitecoreCloudDictionary(azureProperties.AzureAccountName, azureProperties.AzureQueueName);
                         return Json(result, JsonRequestBehavior.AllowGet);
                     }
                 }
@@ -52,7 +52,7 @@ namespace SCHackathon.Feature.CloudConnector.Controllers
             }
         }
 
-        private bool SetSitecoreCloudDictionary(QueueClient cloudQueueClient)
+        private bool SetSitecoreCloudDictionary(string accountName, string queuename)
         {
             bool isSuccess = false;
             Item newItem = null;
@@ -66,14 +66,14 @@ namespace SCHackathon.Feature.CloudConnector.Controllers
             {
                 try
                 {
-                    string output = JsonConvert.SerializeObject(cloudQueueClient);
+
                     var getexistingItem = masterDB.GetItem("/sitecore/system/Dictionary/clouddictionary");
                     newItem = getexistingItem == null ? parentItem.Add("clouddictionary", template) : getexistingItem;
                     if (newItem != null)
                     {
                         newItem.Editing.BeginEdit();
                         newItem["Key"] = newItem.Name;
-                        newItem["Phrase"] = output;
+                        newItem["Phrase"] = accountName + "||" + queuename;
                         newItem.Editing.EndEdit();
                         isSuccess = true;
                         PublishItem(Database.GetDatabase("master"), Database.GetDatabase("web"), parentItem);
