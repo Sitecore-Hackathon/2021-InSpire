@@ -69,7 +69,11 @@ If credentials are valid, then Sitecore will be connected to Azure storage accou
 Now you can use with Sitecore forms or Sitecore marketing automation 
 application to save contacts data in Azure.
 
-First let's see how to use this module in Sitecore Forms as below screenshots
+Below are the screenshots in sequence for reference
+
+![Cloud connect app on Launchpad](docs/images/cloud-connect.PNG?raw=true "Cloud connect")
+
+![Cloud connect page item](docs/images/connect-to-cloud-page.PNG?raw=true "cloud connect page item")
 
 ![SendToAzure Custom Action button on Form](docs/images/SendToAzure-CustomButton.PNG?raw=true "Azure Custom Action")
 
@@ -81,4 +85,4 @@ First let's see how to use this module in Sitecore Forms as below screenshots
 
 
 ## Comments
-
+All the Best to all the Participants - cheers!!!
