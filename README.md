@@ -49,7 +49,7 @@ Content editor & marketers must need azure Credentials
 ## Installation instructions
 
 - Install Sitecore 10.1.0 rev. 005207 [Sitecore Experience Platform 10.1](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/101/Sitecore_Experience_Platform_101.aspx)
-- Install [cloud connect module](https://github.com/Sitecore-Hackathon/2021-InSpire/raw/develop-pk/docs/cloud%20connector.zip)
+- Install [cloud connect module](https://github.com/Sitecore-Hackathon/2021-InSpire/raw/main/docs/cloud%20connect.zip)
 - Smart Publish
 
 
