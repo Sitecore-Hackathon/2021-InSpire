@@ -1,0 +1,93 @@
+﻿
+<head>
+    <title>Cloud Connect</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/scripts/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Choose your Cloud Provider</h2>
+        <form>
+            <div class="form-group">
+
+
+                <select onchange="onproviderChange()" name="cloudprovider" id="cloudproviderId">
+                    <option value="Azure">Azure</option>
+                    <option value="AWS">AWS</option>
+                    <option value="Google Cloud">Google Cloud</option>
+                    <option value="Rackspace">Rackspace</option>
+                    <option value="AliBabaCloud">AliBabaCloud</option>
+                </select>
+            </div>
+            <br />
+            <br />
+            <div id="azureForm">
+                <div class="form-group">
+                    <label for="accountName">Azure Storage Account Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Account Name" id="accountName">
+                </div>
+                <div class="form-group">
+                    <label for="accountkey">Azure Storage Account key:</label>
+                    <input type="text" class="form-control" placeholder="Enter Account Key" id="accountkey">
+                </div>
+                <input type="button" name="Connect To Azure" value="Connect To Azure" onclick="connectToAzure()" class="btn btn-primary">
+            </div>
+        </form>
+
+        <h1 id="successId">Successfully connected to Azure!!!!</h1>
+        <h1 id="errorId">Invalid credentials..</h1>
+    </div>
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $("#successId").hide();
+        $("#errorId").hide();
+    });
+    function onproviderChange() {
+        if ($("#cloudproviderId").val() !== "Azure") {
+            $("#azureForm").hide();
+        } else if ($("#cloudproviderId").val() == "Azure") {
+            $("#azureForm").show();
+        }
+    }
+    function connectToAzure() {
+
+
+        var azureProperties = {
+            AzureAccountName: $("#accountName").val(),
+            SecretKey: $("#accountkey").val(),
+            AzureUrl: "",
+            AzureQueueName: ""
+        };
+
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            url: '/api/sitecore/CloudConnector/ConnectToAzure',
+            data: azureProperties,
+            success: function (result) {
+
+                if (result == true) {
+                    $("#errorId").hide();
+                    $("#successId").show();
+                } else {
+                    $("#successId").hide();
+                    $("#errorId").show();
+                }
+
+            },
+            error: function (err) {
+                console.log("Error occured while connecting with cloud provider..");
+                $("#successId").hide();
+
+            }
+        });
+    }
+
+</script>
+
